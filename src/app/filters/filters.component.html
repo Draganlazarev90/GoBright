@@ -1,0 +1,41 @@
+<form class="form" [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+  <div class="control-shell">
+    <label for="time">Date</label>
+    <p-calendar
+    #date
+    formControlName="date"
+    [readonlyInput]="true"
+    styleClass="custom-inputs"
+    dateFormat="M d, yy"
+    >
+    </p-calendar>
+    <button type="button" (click)="date.toggle()">
+      <i class="mdi mdi-chevron-down"></i>
+    </button>
+  </div>
+  <div class="control-shell">
+    <label for="time">Starting</label>
+    <p-calendar
+    #time
+    formControlName="time"
+    [timeOnly]="true"
+    [readonlyInput]="true"
+    [stepMinute]="15"
+    styleClass="custom-inputs">
+    </p-calendar>
+    <button type="button" (click)="time.toggle()">
+      <i class="mdi mdi-chevron-down"></i>
+    </button>
+  </div>
+  <div class="control-shell">
+    <label for="time">Duration</label>
+    <p-dropdown
+    #duration
+    [options]="durationOptions"
+    formControlName="duration"
+    styleClass="custom-inputs"
+    dropdownIcon="mdi mdi-chevron-down">
+  </p-dropdown>
+  </div>
+  <button type="submit">Find a Room</button>
+</form>

@@ -1,0 +1,38 @@
+.subheader {
+    width: 1920px;
+    height: 220px;
+    background-image: url("./../../assets/search_subheader.png");
+
+    .filters {
+        position: absolute;
+        top: 197px;
+        left: 755px;
+        height: 64px;
+        width: 845px;
+    }
+}
+
+.results {
+    margin: 0 320px;
+    height: 400px;
+    hr {
+      border-top: 1px solid #dddddd;
+    }
+    app-space {
+      border-bottom: 1px solid #e3e3e3;
+      &:last-of-type {
+        border: none;
+      }
+    }
+}
+.no-results {
+  position: absolute;
+  font-size: 28px;
+  color: #878787;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  i {
+    margin-right: 8px;
+  }
+}

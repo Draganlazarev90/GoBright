@@ -1,0 +1,17 @@
+<div class="subheader">
+    <div class="filters">
+      <app-filters (search)="onSearch($event)"></app-filters>
+    </div>
+</div>
+<div class="results" *ngIf="totalCount > 0; else noSpaces" >
+  <p>Found <strong>{{totalCount}} {{totalCount !== 1 ?'spaces' : 'space'}}</strong> available for at least <strong>{{durationLabel}}</strong> this {{partOfDay}}</p>
+  <hr>
+  <app-space
+  [space]="space"
+  [timeframes]="assignTimeframes(space.id)"
+  *ngFor="let space of spaces| filterDisabled:availabilities:formValue">
+</app-space>
+</div>
+<ng-template #noSpaces>
+  <div class="no-results"><i class="mdi mdi-alert-circle"></i>No spaces found</div>
+</ng-template>

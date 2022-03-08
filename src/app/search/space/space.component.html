@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <img class="image" [src]="space.image" alt="">
+  <div class="info">
+    <h3>{{space.name}}</h3>
+    <!-- <span>{{space.type}}</span> -->
+    <ul class="meta">
+      <li><i class="mdi mdi-account-multiple"></i>{{space.capacity}} persons</li>
+      <li *ngFor="let amenity of space.amenities">
+        <i [class]="amenity.icon"></i>
+        {{amenity.description}}</li>
+    </ul>
+  </div>
+  <div class="actions">
+    <button class="book">Add a booking</button>
+    <ul class="chip-list">
+      <li *ngFor="let time of timeframes" class="chip" [class.disabled]="time.disabled">
+        {{time.value}}
+      </li>
+    </ul>
+  </div>
+</div>
